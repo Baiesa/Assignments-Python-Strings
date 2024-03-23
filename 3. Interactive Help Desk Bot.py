@@ -9,26 +9,26 @@ commands (e.g., "help", "issue", "contact support"). If a command is found, prin
 
 '''
 
-# def parse_command(text):
-#     # Predefined commands and their corresponding responses
-#     commands = {
-#         "help": "Sure, I can help you with that!",
-#         "issue": "Please describe the issue you're facing.",
-#         "contact support": "You can contact our support team at support@example.com."
-#     }
-    
-#     # Check if the text contains any predefined command
-#     for command, response in commands.items():
-#         if command in text.lower():
-#             return response
-    
-#     # If no command is found
-#     return "No valid command found."
+def parse_command(text):
 
-# # Example usage:
-# user_input = input("Enter your text: ")
-# response = parse_command(user_input)
-# print(response)
+    commands = {
+        "help": "Sure, I can help you with that!",
+        "issue": "Please describe the issue you're facing.",
+        "contact support": "You can contact our support team at support@example.com."
+    }
+    
+
+    for command, response in commands.items():
+        if command in text.lower():
+            return response
+    
+ 
+    return "No valid command found."
+
+
+user_input = input("Enter your text: ")
+response = parse_command(user_input)
+print(response)
 
 
 '''
@@ -39,7 +39,7 @@ Print out the category of the issue for the support team.
 '''
 
 def categorize_issue(text):
-    # Keywords for issue categorization
+
     categories = {
         "login": ["login", "signin", "sign in", "authentication"],
         "performance": ["performance", "slow", "lag", "speed"],
@@ -47,20 +47,20 @@ def categorize_issue(text):
         "other": ["other", "general"]
     }
     
-    # Check if the text contains the word "issue"
+
     if "issue" in text.lower():
-        # Check for keywords in the text to categorize the issue
+ 
         for category, keywords in categories.items():
             for keyword in keywords:
                 if keyword in text.lower():
                     return category
         
-        # If no specific category is found, categorize as "other"
+     
         return "other"
     else:
         return None
 
-# Example usage:
+
 user_input = input("Describe the issue you're facing: ")
 category = categorize_issue(user_input)
 if category:

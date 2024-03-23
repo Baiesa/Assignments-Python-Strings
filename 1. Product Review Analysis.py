@@ -33,29 +33,29 @@ Use a predefined list of positive and negative words to check against.
 The function should return the count of positive and negative words for each review.
 
 # '''
-# def sentiment_tally(review, positive_words, negative_words):
-#     positive_count = 0
-#     negative_count = 0 
-#     review = review.lower()
+def sentiment_tally(review, positive_words, negative_words):
+    positive_count = 0
+    negative_count = 0 
+    review = review.lower()
     
-#     words = review.split()
+    words = review.split()
     
-#     for word in words:
-#         if word.strip(".,!?") in positive_words:
-#             positive_count += 1
-#         elif word.strip(".,!?") in negative_words:
-#             negative_count += 1
+    for word in words:
+        if word.strip(".,!?") in positive_words:
+            positive_count += 1
+        elif word.strip(".,!?") in negative_words:
+            negative_count += 1
     
-#     return positive_count, negative_count
+    return positive_count, negative_count
 
-# positive_words = ["good", "excellent", "great", "awesome", "fantastic", "superb", "amazing"]
-# negative_words = ["bad", "poor", "terrible", "horrible", "awful", "disappointing", "subpar"]
+positive_words = ["good", "excellent", "great", "awesome", "fantastic", "superb", "amazing"]
+negative_words = ["bad", "poor", "terrible", "horrible", "awful", "disappointing", "subpar"]
 
-# # Example usage:
-# review = "The movie was good, but the ending was disappointing."
-# pos_count, neg_count = sentiment_tally(review, positive_words, negative_words)
-# print("Positive words count:", pos_count)
-# print("Negative words count:", neg_count)
+
+review = "The movie was good, but the ending was disappointing."
+pos_count, neg_count = sentiment_tally(review, positive_words, negative_words)
+print("Positive words count:", pos_count)
+print("Negative words count:", neg_count)
 
 '''
 Task 3: Review Summary
@@ -63,26 +63,26 @@ Implement a script that takes the first 30 characters of a review and appends "â
 Ensure that the summary does not cut off in the middle of a word.
 '''
 
-# def create_summary(review):
-#     if len(review) <= 30:
-#         return review
+def create_summary(review):
+    if len(review) <= 30:
+        return review
     
-#     last_space_index = review[:30].rfind(' ')
+    last_space_index = review[:30].rfind(' ')
     
-#     if last_space_index == -1:
-#         return review[:30] + "..."
+    if last_space_index == -1:
+        return review[:30] + "..."
     
-#     return review[:last_space_index] + "..."
+    return review[:last_space_index] + "..."
 
-# # Example usage:
-# review1 = "This is a very detailed review about a product that I recently purchased and I must say..."
-# review2 = "The service provided by the company was exceptional and I am very satisfied with it."
 
-# summary1 = create_summary(review1)
-# summary2 = create_summary(review2)
+review1 = "This is a very detailed review about a product that I recently purchased and I must say..."
+review2 = "The service provided by the company was exceptional and I am very satisfied with it."
 
-# print("Summary 1:", summary1)
-# print("Summary 2:", summary2)
+summary1 = create_summary(review1)
+summary2 = create_summary(review2)
+
+print("Summary 1:", summary1)
+print("Summary 2:", summary2)
 
 
 
